@@ -10,6 +10,7 @@
 
 define('jquery', function() { return jQuery; });
 define('knockout', ko);
+define("globalize", Globalize)
 
 define(['durandal/system', 'durandal/app', 'durandal/viewLocator', "util/overrides", "util/extenders", "util/bindings"], function (system, app, viewLocator) {
     //system.debug(true);
