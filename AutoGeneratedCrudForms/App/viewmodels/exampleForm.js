@@ -13,6 +13,8 @@
 
         this.fields = new fields(dataStub, options);
         this.output = ko.observable();
+
+        this.canSave = this.fields.isValid;
     };
 
     ctor.prototype = {
