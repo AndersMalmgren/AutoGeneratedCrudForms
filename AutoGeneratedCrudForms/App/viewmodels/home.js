@@ -48,6 +48,46 @@
                 }
             }
         });
+
+        this.customDataTypes = new form({
+            canEdit: this.canEdit,
+            fields: {
+                selectedFoo: {
+                    combo: {
+                        dataSource: this.getFoos
+                    }
+                }
+            }
+        },
+        {
+            selectedFoo: {
+                id: 1,
+                name: "Selected Foo"
+            } 
+            
+        });
+
+    };
+
+    ctor.prototype = {
+        getFoos: function (options) {
+            if (options.page == 0) {
+                options.total = Math.floor((Math.random() * 200) + 1);
+            }
+
+            var data = [];
+            for (var i = 0; i < Math.min(options.pageSize, options.total) ; i++) {
+                var index = (i + (options.page * options.pageSize));
+                if (index == options.total) { break; }
+                data.push({ name: options.text + " " + index });
+            }
+
+            //Simulate async
+            var delay = Math.floor((Math.random() * 100) + 10);;
+            setTimeout(function () {
+                options.callback({ data: data, total: options.total });
+            }, delay);
+        }
     };
     
     return ctor;

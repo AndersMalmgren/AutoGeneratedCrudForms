@@ -5,14 +5,16 @@ define(["fields/fieldClosures",
     "viewmodels/form/fields/readonly/date",
     "viewmodels/form/fields/readonly/number",
     "viewmodels/form/fields/readonly/bool",
+    "viewmodels/form/fields/readonly/combobox",
     "viewmodels/form/fields/editors/text",
     "viewmodels/form/fields/editors/number",
     "viewmodels/form/fields/editors/bool",
-    "viewmodels/form/fields/editors/date"], function (fields) {
+    "viewmodels/form/fields/editors/date",
+    "viewmodels/form/fields/editors/combobox"], function (fields) {
     function factory(closure, opt) {
         for (var index in closure) {
             var model = closure[index];
-            if (model.can && model.can(opt == null ? null : ko.unwrap(opt.value))) {
+            if (model.can && model.can(opt == null ? null : ko.unwrap(opt.value), opt || {})) {
                 return model;
             }
         }

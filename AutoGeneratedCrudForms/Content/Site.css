@@ -69,3 +69,9 @@ code {
 .muted {
     color: #999999;
 }
+
+/* Fix for twitter bootstrap*/
+
+.combobox .dropdown-menu {
+    display: block;
+}

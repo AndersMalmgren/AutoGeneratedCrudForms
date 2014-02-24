@@ -1,7 +1,7 @@
 ﻿define(["viewmodels/form/fields"], function (fields) {
-    var ctor = function (options) {
+    var ctor = function (options, dataStub) {
 
-        var dataStub = {
+        dataStub = dataStub || {
             text: "bar",
             date: "2013-11-07T11:25:00+01:00",
             number: 1,
