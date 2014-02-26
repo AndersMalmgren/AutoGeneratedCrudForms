@@ -164,6 +164,7 @@
     <Content Include="App\views\form\fields\editors\number.html" />
     <Content Include="App\views\form\fields\editors\text.html" />
     <Content Include="App\views\form\fields\readonly\bool.html" />
+    <Content Include="App\views\form\fields\readonly\combobox.html" />
     <Content Include="App\views\form\fields\readonly\date.html" />
     <Content Include="App\views\form\fields\readonly\number.html" />
     <Content Include="App\views\form\fields\readonly\text.html" />
